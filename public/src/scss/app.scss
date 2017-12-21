@@ -1,0 +1,68 @@
+
+//COLORS
+$font_color: white;    
+$secondary_color: #FF9D7A;
+
+//FONT SIZE
+body{
+	font-family: 'Arbutus Slab', serif;
+	h1, h2, h3{
+		font-family: 'Roboto', sans-serif;
+		font-weight: bold;
+	}
+	h1{
+		font-size: 50px;
+	}
+	p{
+		font-family: 'Arbutus Slab', serif;
+		font-size: 22px;
+	}
+	@media(max-width:1300px){
+		h1{
+			font-size: 30px;
+		}
+		h2{
+			font-size: 20px;
+		}
+		h3{
+			font-size: 18px;
+		}
+		p{
+			font-size: 20px;
+		}
+	}
+	@media(max-width:1265px){
+		.main_background{
+			padding: 0;
+		}
+	}
+	@media(max-width:500px){
+		h1{
+			font-size: 28px;
+		}
+		h2{
+			font-size: 20px;
+		}
+		h3{
+			font-size: 18px;
+		}
+		p{
+			font-size: 18px;
+		}
+	}
+
+}
+// GLOBAL CSS
+.active{
+	>a:first-of-type{
+		color: $secondary_color!important;
+	}
+}
+
+
+//FONTS
+
+
+//PARTIALS
+@import "partials/home";
+@import "partials/header";
