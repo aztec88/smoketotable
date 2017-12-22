@@ -285,3 +285,32 @@
 		
 	}
 }
+//BLOG
+.blog_page{
+	max-height: 750px;
+}
+.blog_list{
+	.blog_single{
+		display: inline-block;
+		.service_title{
+			p{
+				font-size: 16px;
+				line-height: 20px;
+			}
+		}
+	}
+}
+.blog_main{
+	.comments{
+		margin-top: 50px;
+	}
+	.share_post{
+		margin-top: 30px;
+		.nc_socialPanel .totes.totesalt .swp_count{
+			color: white;
+		}
+	}
+	.blog_display{
+		max-height: 800px;
+	}
+}

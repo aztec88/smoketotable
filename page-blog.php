@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Services list
+ * Template Name: Blog list
  */
 ?>
 
@@ -16,22 +16,22 @@
 				<?php get_header(); ?>
 					   			
 					<div class="text">
-							<div class="page_text">
+							<div class="page_text blog_page">
 								<h1><?php the_title(); ?></h1>
 							
 									<?php the_content(); ?>	
 									
 
-									<div class="list_of_services">
+									<div class="list_of_services blog_list">
 									<?php
-										$args = array( 'post_type' => 'services', 
+										$args = array( 'post_type' => 'post', 
 															'posts_per_page' => -1,
 														'sortby' => 'date',
-													'order' => 'ASC' );
+													'order' => 'DESC' );
 										$loop = new WP_Query( $args );
 										while ( $loop->have_posts() ) : $loop->the_post();
 										?>
-										<div class="wraper_service">
+										<div class="wraper_service blog_single col-xs-12 col-md-6 col-lg-4">
 										<a class="service_link" href="<?php the_permalink(); ?>" title="Read more">
 										<div class="service">
 
