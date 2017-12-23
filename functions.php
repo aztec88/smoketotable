@@ -60,20 +60,20 @@ function create_posttype() {
 	  'supports' => array('title', 'editor', 'thumbnail', 'author')
 	)
   );
-  register_post_type( 'photos',
-    array(
-      'labels' => array(
-        'name' => __( 'Photos' ),
-        'singular_name' => __( 'Photo' )
-      ),
+//   register_post_type( 'photos',
+//     array(
+//       'labels' => array(
+//         'name' => __( 'Photos' ),
+//         'singular_name' => __( 'Photo' )
+//       ),
       
-      'public' => true,
-      'has_archive' => true,
-      'menu_icon' => 'dashicons-images-alt2',
-      'rewrite' => array('slug' => 'photo'),
-      'supports' => array('title', 'editor', 'thumbnail', 'author')
-    )
-  );
+//       'public' => true,
+//       'has_archive' => true,
+//       'menu_icon' => 'dashicons-images-alt2',
+//       'rewrite' => array('slug' => 'photo'),
+//       'supports' => array('title', 'editor', 'thumbnail', 'author')
+//     )
+//   );
   
 }
 add_action( 'init', 'create_posttype' );

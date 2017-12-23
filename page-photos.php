@@ -6,7 +6,12 @@
 ?>
 
 			<div class="container-fluid main_background">
-				<?php get_header(); ?>
+				<?php 
+				get_header(); 
+				
+				$id = get_the_ID();			  
+				$images = twp_get_post_images($id, 'full');
+				?>
 					   			
 		   			<div class="text">
 	   					<div class="page_text">
@@ -14,27 +19,14 @@
 	   						 <!-- Swiper -->
 							<div class="swiper-container gallery-top">
 							    <div class="swiper-wrapper">
-								    <?php
-								    $args = array(
-									'post_type' => 'photos', // Your custom post type
-									'posts_per_page' => '-1', // Change the number to whatever you wish
-									'order_by' => 'date', // Some optional sorting
-									'order' => 'DESC', 
-									);
-									$new_query = new WP_Query ($args);
-									if ($new_query->have_posts()) {
-									    while($new_query->have_posts()){
-									        $new_query->the_post(); 
-									         ?><div class="swiper-slide"><?php the_post_thumbnail('', array('class' => 'img-responsive')); ?></div><?php
-									        // Get a list of post's categories
-									        $categories = get_the_category($post->ID);
-									        foreach ($categories as $category) {
-									            echo $category->name;
-									        }
-									    }
-									}
-									wp_reset_postdata();
-								    ?>						
+								<?php 
+								 
+									 foreach ($images as $image){
+										$img_id=$image->id;
+										$alt = get_post_meta($img_id, '_wp_attachment_image_alt', true);
+										 echo ("<div class='swiper-slide'><img class='img-responsive' src='$image->url' alt='$alt'></div>");
+									 }
+								  ?>				
 							    </div>
 							    <!-- Add Arrows -->
 							    <div class="swiper-button-next swiper-button-white"><i class="fa fa-angle-right fa-2x" aria-hidden="true"></i></div>
@@ -42,29 +34,13 @@
 							</div>
 							<div class="swiper-container gallery-thumbs">
 							    <div class="swiper-wrapper">
-								    <?php
-								    $args = array(
-									'post_type' => 'photos', // Your custom post type
-									'posts_per_page' => '-1', // Change the number to whatever you wish
-									'order_by' => 'date', // Some optional sorting
-									'order' => 'DESC', 
-									);
-									$new_query = new WP_Query ($args);
-									if ($new_query->have_posts()) {
-									    while($new_query->have_posts()){
-									        $new_query->the_post(); 
-									         ?><div class="swiper-slide"><?php the_post_thumbnail('', array('class' => 'img-responsive')); ?></div><?php
-									        // Get a list of post's categories
-									        $categories = get_the_category($post->ID);
-									        foreach ($categories as $category) {
-									            echo $category->name;
-									        }
-									    }
+								<?php 
+								 foreach ($images as $image){
+									$img_id=$image->id;
+									$alt = get_post_meta($img_id, '_wp_attachment_image_alt', true);
+									 echo ("<div class='swiper-slide'><img class='img-responsive' src='$image->url' alt='$alt'></div>");
 									}
-									wp_reset_postdata();
-								    ?>						
-							       
-							        
+								?>		
 							    </div>
 							</div>			
 	   					</div>

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>SmokeToTable</title>
+        <title><?php wp_title(''); ?></title>
         <meta name="description" content="Smoke To Table is a Cincinnati, Ohio based catering company that specializes in bringing premium smoked meats and sides to local events and gatherings">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         <link rel="shortcut icon" href="/wp-content/themes/smoketotable/favicon.ico" type="image/x-icon">

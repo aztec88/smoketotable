@@ -288,6 +288,26 @@
 //BLOG
 .blog_page{
 	max-height: 750px;
+	@media(min-width:1000px){
+		min-width: 960px;
+	}
+}
+.pagination{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 20px;
+    .current{
+        border: 3px $secondary_color solid;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 0 10px;
+        width: 45px;
+        height: 34px;
+    }
+    .page-numbers{
+        color: $font_color;
+        margin: 0 10px;
+    }
 }
 .blog_list{
 	.blog_single{
